@@ -6,5 +6,6 @@ router=DefaultRouter()
 urlpatterns=[
     path("post_phone_send_otp/", PhoneSendOtp.as_view()),
     path("post_phone_v_otp/", VerifySms.as_view()),
-    path("register/", RegisterUserApi.as_view())
+    path("register/", RegisterUserApi.as_view()),
+    path("teacher/", TeacherUserApi.as_view())
 ]

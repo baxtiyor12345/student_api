@@ -109,3 +109,4 @@ class LoginApi(APIView):
         token["is_admin"]=user.is_superuser
 
         return Response(dat=token, status=status.HTTP_200_OK)
+
