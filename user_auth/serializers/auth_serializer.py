@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from ..models import *
 
-class UserSerializers(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=("id","phone_number","password","is_active""is_teacher","is_staff","is_admin", "is_student")
+        fields=("id","phone_number","password","is_active","is_teacher","is_staff","is_admin", "is_student")
 
 class ChangePasswordSerializer(serializers.ModelSerializer):
     old_password=serializers.CharField(required=True, write_only=True)

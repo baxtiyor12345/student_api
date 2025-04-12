@@ -13,6 +13,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from ..serializers import *
+from ..models import *
 
 
 class PhoneSendOtp(APIView):
@@ -67,7 +68,10 @@ class VerifySms(APIView):
                     }
                 )
 
+
+
 class RegisterUserApi(APIView):
+    @swagger_auto_schema(request_body=UserSerializer)
     def post(self,request):
         serializer=UserSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
