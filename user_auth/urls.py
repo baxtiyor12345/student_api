@@ -8,6 +8,8 @@ urlpatterns = [
     path("post_phone_v_otp/", VerifySms.as_view()),
     path("register/", RegisterUserApi.as_view()),
     path("teacher/", UserTeacherCreateApi.as_view()),
+    path("teacher/<int:pk>/", UserTeacherCreateApi.as_view()),
+    path("student/<int:pk>/", UserStudentCreateApi.as_view()),
     path("student/", UserStudentCreateApi.as_view()),
     # path("teacher/", TeacherCreateApiView.as_view()),
     # path("ass/", BaseSerializer.as_view())
